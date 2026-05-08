@@ -1,0 +1,241 @@
+﻿<Window x:Class="RegistrationApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Course Registration System" 
+        Height="1200" 
+        Width="900"
+        Background="#E8F4F8"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        WindowState="Maximized">
+
+    <Grid Background="White">
+        <StackPanel Margin="30,20,30,20">
+
+            <!-- HEADER -->
+            <TextBlock Text="COURSE REGISTRATION SYSTEM" 
+                      FontSize="28" 
+                      FontWeight="Bold" 
+                      Foreground="#1A5276"
+                      TextAlignment="Center"
+                      Margin="0,0,0,5"/>
+
+            <TextBlock Text="Air University, Kharian Campus - Department of Computer Science" 
+                      FontSize="12" 
+                      Foreground="#666666"
+                      TextAlignment="Center"
+                      Margin="0,0,0,20"/>
+
+            <Separator Background="#3498DB" Height="3" Margin="0,0,0,20"/>
+
+            <!-- CONTENT GRID - 2 COLUMNS -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- LEFT COLUMN -->
+                <StackPanel Grid.Column="0" Margin="0,0,20,0">
+
+                    <!-- SECTION 1: NAME -->
+                    <TextBlock Text="✍️Enter Your Name:" 
+                              FontSize="13" 
+                              FontWeight="Bold" 
+                              Foreground="#1A5276"
+                              Margin="0,0,0,8"/>
+
+                    <TextBox x:Name="txtName"
+                            Height="38"
+                            Padding="10,8"
+                            FontSize="11"
+                            Background="White"
+                            Foreground="#333333"
+                            BorderBrush="#3498DB"
+                            BorderThickness="2"
+                            Margin="0,0,0,18"/>
+
+                    <!-- SECTION 2: COURSES -->
+                    <TextBlock Text="📃Select Courses:" 
+                              FontSize="13" 
+                              FontWeight="Bold" 
+                              Foreground="#1A5276"
+                              Margin="0,0,0,10"/>
+
+                    <Border Background="#F0F7FF" BorderBrush="#3498DB" BorderThickness="1" Padding="12,8" CornerRadius="4" Margin="0,0,0,20">
+                        <StackPanel>
+                            <CheckBox x:Name="chkCSharp" 
+                                     Content="C# Programming - Rs. 5,000" 
+                                     FontSize="11"
+                                     Margin="0,4,0,6"
+                                     Checked="Course_Changed"
+                                     Unchecked="Course_Changed"
+                                     Padding="6,3"/>
+
+                            <CheckBox x:Name="chkJava" 
+                                     Content="Java Programming - Rs. 4,500" 
+                                     FontSize="11"
+                                     Margin="0,4,0,6"
+                                     Checked="Course_Changed"
+                                     Unchecked="Course_Changed"
+                                     Padding="6,3"/>
+
+                            <CheckBox x:Name="chkJavaScript" 
+                                     Content="JavaScript and Web Dev - Rs. 4,000" 
+                                     FontSize="11"
+                                     Margin="0,4,0,6"
+                                     Checked="Course_Changed"
+                                     Unchecked="Course_Changed"
+                                     Padding="6,3"/>
+
+                            <CheckBox x:Name="chkPython" 
+                                     Content="Python Programming - Rs. 3,500" 
+                                     FontSize="11"
+                                     Margin="0,4,0,6"
+                                     Checked="Course_Changed"
+                                     Unchecked="Course_Changed"
+                                     Padding="6,3"/>
+
+                            <CheckBox x:Name="chkROR" 
+                                     Content="Ruby on Rails - Rs. 6,000" 
+                                     FontSize="11"
+                                     Margin="0,4,0,0"
+                                     Checked="Course_Changed"
+                                     Unchecked="Course_Changed"
+                                     Padding="6,3"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- SECTION 3: SKILL LEVEL -->
+                    <TextBlock Text="🎚️Select Skill Level:" 
+                              FontSize="13" 
+                              FontWeight="Bold" 
+                              Foreground="#1A5276"
+                              Margin="0,0,0,10"/>
+
+                    <Border Background="#FFF9E6" BorderBrush="#F39C12" BorderThickness="1" Padding="12,8" CornerRadius="4" Margin="0,0,0,0">
+                        <StackPanel>
+                            <RadioButton x:Name="rbBeginner" 
+                                        GroupName="SkillLevel"
+                                        Content="Beginner (0% Discount)" 
+                                        FontSize="11"
+                                        Margin="0,4,0,8"
+                                        Checked="SkillLevel_Changed"
+                                        Padding="6,3"/>
+
+                            <RadioButton x:Name="rbIntermediate" 
+                                        GroupName="SkillLevel"
+                                        Content="Intermediate (10% Discount)" 
+                                        FontSize="11"
+                                        Margin="0,4,0,8"
+                                        Checked="SkillLevel_Changed"
+                                        Padding="6,3"/>
+
+                            <RadioButton x:Name="rbAdvanced" 
+                                        GroupName="SkillLevel"
+                                        Content="Advanced (15% Discount)" 
+                                        FontSize="11"
+                                        Margin="0,4,0,0"
+                                        Checked="SkillLevel_Changed"
+                                        Padding="6,3"/>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+
+                <!-- RIGHT COLUMN -->
+                <StackPanel Grid.Column="1" Margin="20,0,0,0">
+
+                    <!-- SECTION 4: FEE SUMMARY -->
+                    <TextBlock Text="💵Fee Summary:" 
+                              FontSize="13" 
+                              FontWeight="Bold" 
+                              Foreground="#1A5276"
+                              Margin="0,0,0,10"/>
+
+                    <Border Background="#E8F8F5" BorderBrush="#27AE60" BorderThickness="2" Padding="15,12" CornerRadius="5" Margin="0,0,0,20">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="2"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Base Fee:" FontSize="11" FontWeight="Bold" Foreground="#333" Grid.Column="0" Grid.Row="0" Margin="0,0,0,8"/>
+                            <TextBlock x:Name="lblBaseFee" Text="Rs. 0" FontSize="12" FontWeight="Bold" Foreground="#27AE60" Grid.Column="1" Grid.Row="0" Margin="0,0,0,8" TextAlignment="Right"/>
+
+                            <TextBlock Text="Discount:" FontSize="11" FontWeight="Bold" Foreground="#333" Grid.Column="0" Grid.Row="1" Margin="0,0,0,8"/>
+                            <TextBlock x:Name="lblDiscount" Text="0%" FontSize="12" FontWeight="Bold" Foreground="#E74C3C" Grid.Column="1" Grid.Row="1" Margin="0,0,0,8" TextAlignment="Right"/>
+
+                            <TextBlock Text="Discount Amount:" FontSize="11" FontWeight="Bold" Foreground="#333" Grid.Column="0" Grid.Row="2" Margin="0,0,0,10"/>
+                            <TextBlock x:Name="lblDiscountAmount" Text="Rs. 0" FontSize="12" FontWeight="Bold" Foreground="#F39C12" Grid.Column="1" Grid.Row="2" Margin="0,0,0,10" TextAlignment="Right"/>
+
+                            <Separator Background="#27AE60" Height="2" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Margin="0,0,0,10"/>
+
+                            <TextBlock Text="TOTAL FEE:" FontSize="12" FontWeight="Bold" Foreground="White" Background="#27AE60" Grid.Column="0" Grid.Row="4" Padding="8,6" Margin="0,0,5,0"/>
+                            <TextBlock x:Name="lblTotalFee" Text="Rs. 0" FontSize="14" FontWeight="Bold" Foreground="White" Background="#27AE60" Grid.Column="1" Grid.Row="4" Padding="8,6" Margin="5,0,0,0" TextAlignment="Right"/>
+                        </Grid>
+                    </Border>
+
+                    <!-- BUTTONS -->
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,0">
+
+                        <Button x:Name="btnCalculate"
+                               Content="💰 CALCULATE"
+                               Click="btnCalculate_Click"
+                               Height="40"
+                               FontSize="12"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               Background="#3498DB"
+                               Margin="0,0,0,8"
+                               Padding="10,8"
+                               Cursor="Hand"/>
+
+                        <Button x:Name="btnReset"
+                               Content="🔄 RESET"
+                               Click="btnReset_Click"
+                               Height="40"
+                               FontSize="12"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               Background="#E74C3C"
+                               Margin="0,0,0,8"
+                               Padding="10,8"
+                               Cursor="Hand"/>
+
+                        <Button x:Name="btnSubmit"
+                               Content="✓ SUBMIT"
+                               Click="btnSubmit_Click"
+                               Height="40"
+                               FontSize="12"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               Background="#27AE60"
+                               Margin="0,0,0,0"
+                               Padding="10,8"
+                               Cursor="Hand"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+
+            </Grid>
+
+            <!-- FOOTER -->
+            <Separator Background="#DDDDDD" Height="2" Margin="0,25,0,15"/>
+            <TextBlock Text="© 2026 Air University, Kharian Campus | Visual Programming (CS-284L) | Assignment #2" 
+                      Foreground="#666666" 
+                      FontSize="10" 
+                      TextAlignment="Center"/>
+
+        </StackPanel>
+    </Grid>
+
+</Window>
