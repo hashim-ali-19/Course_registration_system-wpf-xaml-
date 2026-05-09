@@ -1,20 +1,9 @@
 # 🎓 Course Registration System — WPF Application
-
+![image alt](onload.png)
 > A Windows desktop application built with **C# and WPF (Windows Presentation Foundation)** that allows students to register for programming courses and automatically calculates the total fee based on selected courses and skill level.
 
 ---
 
-## 📋 Project Info
-
-| Field | Details |
-|---|---|
-| **Student** | Hashim Ali |
-| **Registration No.** | 247259 |
-| **Course** | Visual Programming (Lab) |
-| **Instructor** | Prof Qaiser Ali |
-| **Submission Date** | 15 March 2026 |
-
----
 
 ## ✨ Features
 
@@ -60,18 +49,6 @@
 | **Markup** | XAML |
 | **Namespace** | `RegistrationApp` |
 | **Target OS** | Windows 11 |
-
----
-
-## 📸 Screenshots
-
-> *(Add your screenshots here)*
-
-```
-![Default Load](screenshots/default.png)
-![Fee Calculation](screenshots/calculation.png)
-![Successful Submission](screenshots/submit.png)
-```
 
 ---
 
